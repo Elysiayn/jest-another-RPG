@@ -1,10 +1,10 @@
-const Potion = require('../lib/Potion');
+const Player = require('../lib/Player.js');
+const Potion = require('../lib/Potion.js');
 
 jest.mock('../lib/Potion.js');
 
 console.log(new Potion());
 
-const Player = require('../lib/Player');
 
 //test that checks for the existence of health/strength/agility
 test('creates a player object', () => {
@@ -14,8 +14,8 @@ test('creates a player object', () => {
     expect(player.health).toEqual(expect.any(Number));
     expect(player.strength).toEqual(expect.any(Number));
     expect(player.agility).toEqual(expect.any(Number));
-    expect(player.inventory).toEqual(
-        expect.arrayContaining([expect.any(Object)]));
+
+    expect(player.inventory).toEqual(expect.arrayContaining([expect.any(Object)]));
 });
 
 //test for checking player stats as object
